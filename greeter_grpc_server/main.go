@@ -21,6 +21,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net"
 
@@ -43,12 +44,14 @@ func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloRe
 	return &pb.HelloReply{Message: "Hello " + in.GetName()}, nil
 }
 
+// SayGoodbye implemented helloworld.GreeterServer and is the first custom endpoint
 func (s *server) SayGoodbye(ctx context.Context, in *pb.GoodbyeRequest) (*pb.GoodbyeReply, error) {
 	log.Printf("Received: %v", in.GetName())
 	return &pb.GoodbyeReply{Message: "Goodbye " + in.GetName()}, nil
 }
 
 func main() {
+	fmt.Println("GRPC Server initialized")
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)

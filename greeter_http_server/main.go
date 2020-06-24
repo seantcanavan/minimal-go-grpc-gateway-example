@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"flag"
+	"fmt"
 	"net/http"
 
 	"github.com/golang/glog"
@@ -24,6 +25,7 @@ var (
 )
 
 func run() error {
+	fmt.Println("HTTP server initialized")
 	ctx := context.Background()
 	ctx, cancel := context.WithCancel(ctx)
 	defer cancel()

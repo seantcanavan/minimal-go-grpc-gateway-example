@@ -8,9 +8,9 @@
 4. Make targets to simplify generating, building, and running the project
 
 #### How to run the code:
-1. Run both servers: `make -j 2 grpc-server http-server`
-2. Run both clients: `make -j 2 grpc-client http-client`
-3. You can also hit the HTTP server via REST: 
+1. Run both servers: `make -j 2 server`
+2. Run both clients: `make -j 2 client`
+3. You can also hit the HTTP server via REST after starting it up:
     1. `GET: http://localhost:8081/v1/sayhello/Sean`
     2. `GET: http://localhost:8081/v1/saygoodbye/Sean`
     
