@@ -7,10 +7,14 @@
 3. GRPC Gateway annotations added to the Hello World proto
 4. Make targets to simplify generating, building, and running the project
 
-#### How to run the code:
-1. Run both servers: `make -j 2 server`
-2. Run both clients: `make -j 2 client`
-3. You can also hit the HTTP server via REST after starting it up:
+#### How to run the code
+1. `go build greeter_grpc_client/main.go` Build the GRPC client
+2. `go build greeter_grpc_server/main.go` Build the GRPC server
+3. `go build greeter_http_client/main.go` Build the HTTP client
+4. `go build greeter_http_server/main.go` Build the HTTP server
+3. Run both servers: `make -j 2 server`
+4. Run both clients: `make -j 2 client`
+5. You can also hit the HTTP server via REST after starting it up:
     1. `GET: http://localhost:8081/v1/sayhello/Sean`
     2. `GET: http://localhost:8081/v1/saygoodbye/Sean`
     
