@@ -1,5 +1,15 @@
 .PHONY: hello-world hello-world-gateway server protoc grpc-server http-server http-client grpc-client
 
+build: clean tidy
+	go build ./...
+	env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w" -o bin/greeter_grpc_client greeter_grpc_client/main.go
+	env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w" -o bin/greeter_grpc_server greeter_grpc_server/main.go
+	env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w" -o bin/greeter_http_client greeter_http_client/main.go
+	env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w" -o bin/greeter_http_server greeter_http_server/main.go
+
+clean:
+	rm -rfv ./bin
+
 # Run the commands required to generate all the GRPC boilerplate code
 # Note these files have been generated already and are included in ./helloworld/
 protoc: hello-world hello-world-gateway
@@ -25,3 +35,6 @@ http-client:
 
 grpc-client:
 	go run ./greeter_grpc_client/main.go
+
+tidy:
+	go mod tidy
