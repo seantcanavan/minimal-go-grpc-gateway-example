@@ -39,13 +39,13 @@ type server struct {
 }
 
 // SayHello implements helloworld.GreeterServer
-func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
+func (s *server) SayHello(_ context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
 	log.Printf("Received: %v", in.GetName())
 	return &pb.HelloReply{Message: "Hello " + in.GetName()}, nil
 }
 
 // SayGoodbye implemented helloworld.GreeterServer and is the first custom endpoint
-func (s *server) SayGoodbye(ctx context.Context, in *pb.GoodbyeRequest) (*pb.GoodbyeReply, error) {
+func (s *server) SayGoodbye(_ context.Context, in *pb.GoodbyeRequest) (*pb.GoodbyeReply, error) {
 	log.Printf("Received: %v", in.GetName())
 	return &pb.GoodbyeReply{Message: "Goodbye " + in.GetName()}, nil
 }

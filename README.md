@@ -2,7 +2,7 @@
 
 #### This project combines the following technologies in the simplest example possible:
 
-1. GoLang 1.13 with Go Modules
+1. GoLang 1.21 with Go Modules
 2. GRPC Hello World example
 3. GRPC Gateway annotations added to the Hello World proto
 4. Make targets to simplify generating, building, and running the project
@@ -12,9 +12,9 @@
 2. `go build greeter_grpc_server/main.go` Build the GRPC server
 3. `go build greeter_http_client/main.go` Build the HTTP client
 4. `go build greeter_http_server/main.go` Build the HTTP server
-3. Run both servers: `make -j 2 server`
-4. Run both clients: `make -j 2 client`
-5. You can also hit the HTTP server via REST after starting it up:
+5. Run both servers: `make -j 2 server`
+6. Run both clients: `make -j 2 client`
+7. You can also hit the HTTP server via REST after starting it up:
     1. `GET: http://localhost:8081/v1/sayhello/Sean`
     2. `GET: http://localhost:8081/v1/saygoodbye/Sean`
     
@@ -34,3 +34,10 @@
 3. https://github.com/grpc-ecosystem/grpc-gateway
 4. https://github.com/grpc/grpc-go
 5. https://github.com/grpc/grpc-go/tree/master/examples/helloworld
+
+
+https://www.harrisboats.com/build-and-price/boat-configurator.HSOL25.html
+154875 after options + tax
+450 = 4 hours
+344 rentals @ 450 per rental with 4 hours per rental = 1376 hours of boat before losing money. about 16% of an entire year.
+1376 hours
